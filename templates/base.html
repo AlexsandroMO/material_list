@@ -36,21 +36,6 @@
             value="PncUntEchTa4M4JHpobQvA9m1rRbhWQleQE8TC1ElYdLqCohPG5IcBSdONXrgJQ7">
           <button type="submit">Log out</button>
         </form>
-
-        <button class="theme-toggle">
-          <div class="visually-hidden theme-label-when-auto">Toggle theme (current theme: auto)</div>
-          <div class="visually-hidden theme-label-when-light">Toggle theme (current theme: light)</div>
-          <div class="visually-hidden theme-label-when-dark">Toggle theme (current theme: dark)</div>
-          <svg aria-hidden="true" class="theme-icon-when-auto">
-            <use xlink:href="#icon-auto" />
-          </svg>
-          <svg aria-hidden="true" class="theme-icon-when-dark">
-            <use xlink:href="#icon-moon" />
-          </svg>
-          <svg aria-hidden="true" class="theme-icon-when-light">
-            <use xlink:href="#icon-sun" />
-          </svg>
-        </button>
       </div>
     </header>
 
@@ -58,48 +43,22 @@
 
     <div class="main" id="main">
       <main id="content-start" class="content" tabindex="-1">
-
         <!-- Content -->
         <div id="content" class="colMS">
-
-          <h1>Site administration</h1>
           <div id="content-main">
-            <div class="app-auth module">
-              <table>
-                <caption>
-                  <a href="/admin/auth/" class="section"
-                    title="Models in the Authentication and Authorization application">Authentication and
-                    Authorization</a>
-                </caption>
-                <tr class="model-group">
-                  <th scope="row"><a href="/admin/auth/group/">Groups</a></th>
-                  <td><a href="/admin/auth/group/add/" class="addlink">Add</a></td>
-                  <td><a href="/admin/auth/group/" class="changelink">Change</a></td>
-                </tr>
-                <tr class="model-user">
-                  <th scope="row"><a href="/admin/auth/user/">Users</a></th>
-                  <td><a href="/admin/auth/user/add/" class="addlink">Add</a></td>
-                  <td><a href="/admin/auth/user/" class="changelink">Change</a></td>
-                </tr>
-              </table>
-            </div>
-          </div>
+          <h1>Site administration</h1>
 
-          <div id="content-related">
-            <div class="module" id="recent-actions-module">
-              <h2>Recent actions</h2>
-              <h3>My actions</h3>
-              <p>None available</p>
-            </div>
-          </div>
-
-          <br class="clear">
+          {% block content %}
+          {% endblock %}
+          
         </div>
+      </div>
+
         <!-- END Content -->
         <div id="footer"></div>
       </main>
     </div>
-  </div>
+
   <!-- END Container -->
 </body>
 
