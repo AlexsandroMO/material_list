@@ -3,79 +3,49 @@
 
 {% block content %}
 
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
-          make a type specimen book. It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-          sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus
-          PageMaker including versions of Lorem Ipsum.
-        </p>
-        <table class="table table-bordered table-hover">
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>CÓDIGO</th>
-              <th>QUANTIDADE</th>
-              <th>DESCRITIVO</th>
-              <th>UNIDADE</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>1</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td>Approved</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>2</td>
-              <td>John Doe</td>
-              <td>11-7-2014</td>
-              <td>Approved</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>3</td>
-              <td>Mike Doe</td>
-              <td>11-7-2014</td>
-              <td>Denied</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>4</td>
-              <td>Jim Doe</td>
-              <td>11-7-2014</td>
-              <td>Approved</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>5</td>
-              <td>Victoria Doe</td>
-              <td>11-7-2014</td>
-              <td>Pending</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>5</td>
-              <td>Michael Doe</td>
-              <td>11-7-2014</td>
-              <td>Approved</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr data-widget="expandable-table" aria-expanded="false">
-              <td>6</td>
-              <td>Rocky Doe</td>
-              <td>11-7-2014</td>
-              <td>Denied</td>
-              <td>Bacon ipsum dolor sit amet salami venison chicken flank fatback doner.</td>
-            </tr>
-            <tr class="expandable-body d-none">
-              <td colspan="5">
-              </td>
-            </tr>
-          </tbody>
-        </table>
+<div class="actions">
+
+  <label>PRODUTOS: <select name="action_produtos" required>
+  <option value="" selected>---------</option>
+  {% for produto in produtos %}
+  <option value="delete_selected">{{produto}}</option>
+  {% endfor %}
+  </select></label><input type="hidden" name="select_across" value="0" class="select-across">
+<br>
+  <label>TIPOS: <select name="action_tipos" required>
+  <option value="" selected>---------</option>
+  {% for tipo in tipos %}
+  <option value="delete_selected">{{tipo}}</option>
+  {% endfor %}
+  </select></label><input type="hidden" name="select_across" value="0" class="select-across">
   
+  <br>
+  <label>MATERIAIS: <select name="action_materiais" required>
+  <option value="" selected>---------</option>
+  {% for material in materiais %}
+  <option value="delete_selected">{{material}}</option>
+  {% endfor %}
+  </select></label><input type="hidden" name="select_across" value="0" class="select-across">
+
+  <br>
+  <label>ALTURAS: <select name="action_alturas" required>
+  <option value="" selected>---------</option>
+  {% for altura in alturas %}
+  <option value="delete_selected">{{altura}}</option>
+  {% endfor %}
+  </select></label><input type="hidden" name="select_across" value="0" class="select-across">
+ 
+  <br>
+  <label>LARGURAS: <select name="action_larguras" required>
+  <option value="" selected>---------</option>
+  {% for largura in larguras %}
+  <option value="delete_selected">{{largura}}</option>
+  {% endfor %}
+  </select></label><input type="hidden" name="select_across" value="0" class="select-across">
+  <br>
+  <button type="submit" class="button" title="Run the selected action" name="index" value="0">Go</button>
+
+</div>
+    
+
 {% endblock %}

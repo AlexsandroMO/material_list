@@ -34,7 +34,7 @@ class Material(models.Model): #Lista de Funcionários
 
 class Altura(models.Model): #Lista de Funcionários
 
-    altura = models.IntegerField(verbose_name='ALTURA')
+    altura = models.CharField(max_length=255, verbose_name='ALTURA')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -44,7 +44,7 @@ class Altura(models.Model): #Lista de Funcionários
 
 class Largura(models.Model): #Lista de Funcionários
 
-    largura = models.IntegerField(verbose_name='LARGURA')
+    largura = models.CharField(max_length=255, verbose_name='LARGURA')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -74,7 +74,7 @@ class Bitola_PEC(models.Model): #Lista de Funcionários
 
 class Bitola_CAB(models.Model): #Lista de Funcionários
 
-    bitola_cab = models.IntegerField(verbose_name='BITOLA CABO')
+    bitola_cab = models.CharField(max_length=255, verbose_name='BITOLA CABO')
     created_at = models.DateTimeField(auto_now_add=True)
     update_at = models.DateTimeField(auto_now=True)
 
@@ -106,7 +106,7 @@ class Unidade(models.Model): #Lista de Funcionários
 
 
 
-    #control_acting = models.ForeignKey(material_code, on_delete=models.CASCADE, verbose_name='ÁREA')
-    #photo = models.FileField(upload_to='uploads/photos/', blank=True, null=True, verbose_name='FOTO')
-    #user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name='USUÁRIO')
+#control_acting = models.ForeignKey(material_code, on_delete=models.CASCADE, verbose_name='ÁREA')
+#photo = models.FileField(upload_to='uploads/photos/', blank=True, null=True, verbose_name='FOTO')
+#user = models.ForeignKey(get_user_model(), on_delete=models.CASCADE, verbose_name='USUÁRIO')
 
