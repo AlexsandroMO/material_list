@@ -16,7 +16,7 @@ def create_material(request):
 
 
 @login_required
-def view_table(request):
+def list_material(request):
 
     produtos = Produto.objects.all()
     tipos = Tipo.objects.all()
@@ -28,14 +28,28 @@ def view_table(request):
     bitola_pecs = Bitola_CAB.objects.all()
     tipo_forns = Tipo_Forn.objects.all()
     unidades = Unidade.objects.all()
- 
-    #list_read = Produto.objects.filter(done='done', user=request.user).count()
-    #produtos_filtrados = Produto.objects.filter(preco__gt=50)
-    #tasks_list = Task.objects.all().order_by('-created_at').filter(user=request.user)
 
-    return render(request, 'material/view-table.html', {'produtos':produtos,'tipos':tipos, 'materiais': materiais, 'alturas': alturas,
+    return render(request, 'material/list-material.html', {'produtos':produtos,'tipos':tipos, 'materiais': materiais, 'alturas': alturas,
                                                         'larguras':larguras, 'caracts': caracts, 'bitola_cabs':bitola_cabs,
                                                         'bitola_pecs':bitola_pecs, 'tipo_fornss':tipo_forns, 'unidades':unidades})
+
+
+@login_required
+def view_table(request):
+    if request.method == 'POST':
+        form = AlturaForm(request.POST)
+        
+        if form.is_valid():
+            altura = form.save(commit=False)
+            altura.done = 'doing'
+            altura.user = request.user
+            altura.save()
+            return redirect('/')
+    else:
+        form = AlturaForm()
+        return render(request, 'material/addproduto.html', {'form': form})
+    
+
 
 @login_required
 def new_action(request):

@@ -1,0 +1,46 @@
+
+.main{
+    padding-top: 10px;
+    padding-left: 10px;
+}
+
+.button{
+    margin-top: 10px;
+}
+
+.lin-item{
+    display: block;
+}
+
+.lin-item{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lin-item{
+    flex: 1 1 100%;
+    padding-top: 5px;
+}
+
+
+#indice-1{
+    margin-left: 10px;
+}
+
+#indice-2{
+    margin-left: 45px;
+
+}
+
+#indice-3{
+    margin-left:15px;
+}
+
+#indice-4{
+    margin-left:25px;
+}
+
+#indice-5{
+    margin-left:13px;
+    
+}
